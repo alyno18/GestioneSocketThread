@@ -6,10 +6,13 @@ public class GestioneClient {
 	public static void main(String[] args) {
 		try{
 	        Client cli = new Client(InetAddress.getLocalHost(), 2000);
-	        cli.leggi();
+	        System.out.println("Client connesso");
+	        System.out.println("Server: " +cli.leggi());
+	        Countdown cd = new Countdown(Integer.getInteger(cli.leggi()));
+	        cd.start();
 	        }
-		catch(IOException ex){
-	            ex.printStackTrace();
+		catch(IOException e){
+	            e.printStackTrace();
 	        }
 	}
 }

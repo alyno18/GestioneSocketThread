@@ -13,26 +13,30 @@ public class Client {
         try{
         	so = new Socket(ip, porta);
         }
-        catch(IOException ex){
-            ex.printStackTrace();
+        catch(IOException e){
+            e.printStackTrace();
         }
     }
     
     public void scrivi(String messaggio){
-        try{
+        try {
         	out = new DataOutputStream(so.getOutputStream());
+        	out.writeUTF(messaggio);
         }
-        catch (IOException ex) {
-        	ex.printStackTrace();
+        catch(IOException e) {
+        	e.printStackTrace();
         }
         
     }
-    public void leggi(){
+    public String leggi(){
+    	String msg = "";
         try{
         	in = new DataInputStream(so.getInputStream());
+        	msg = in.readUTF();
         }
-        catch (IOException ex) {
-        	ex.printStackTrace();
+        catch(IOException e) {
+        	e.printStackTrace();
         }
+        return msg;
     }
 }

@@ -12,8 +12,8 @@ private int tempo;
             try {
                 sleep(1000);
             }
-            catch (InterruptedException ex) {
-            	ex.printStackTrace();
+            catch (InterruptedException e) {
+            	e.printStackTrace();
             }
         }
     }
