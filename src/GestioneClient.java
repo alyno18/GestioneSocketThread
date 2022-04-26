@@ -1,9 +1,15 @@
+import java.io.IOException;
+import java.net.InetAddress;
 
 public class GestioneClient {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		try{
+	        Client cli = new Client(InetAddress.getLocalHost(), 2000);
+	        cli.leggi();
+	        }
+		catch(IOException ex){
+	            ex.printStackTrace();
+	        }
 	}
-
 }

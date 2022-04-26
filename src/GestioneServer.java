@@ -2,8 +2,8 @@
 public class GestioneServer {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Server srv = new Server(2000);
+        srv.inAscolto();
+        srv.scrivi("Benvenuto");
 	}
-
 }
